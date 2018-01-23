@@ -3,6 +3,13 @@
 // Note:
 // You may assume that nums1 has enough space (size that is greater or equal to m + n) to hold additional elements from nums2. The number of elements initialized in nums1 and nums2 are m and n respectively.
 
+/**
+ * @param {number[]} nums1
+ * @param {number} m
+ * @param {number[]} nums2
+ * @param {number} n
+ * @return {void} Do not return anything, modify nums1 in-place instead.
+ */
 var merge = function(nums1, m, nums2, n) {
     nums1.length = m+n;
     for(var i=0;i<n;i++){
@@ -10,14 +17,14 @@ var merge = function(nums1, m, nums2, n) {
     }
     quickSort(nums1,0,m+n-1);
 };
-function qucikSort(keys,begin,end){
+function quickSort(keys,begin,end){
     //如果数组有效
     if(begin>=0&&begin<end&&end<keys.length){
         var i=begin;
         var j=end;
         var vot=keys[i];
         while(i!=j){
-            while(i<j&&key[j]>=vot){
+            while(i<j&&keys[j]>=vot){
                 j--;
             }
             if(i<j){
